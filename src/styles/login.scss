@@ -1,0 +1,108 @@
+@import "root";
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-body);
+  background-size: cover;
+  min-height: 500px;
+  overflow-y: auto;
+  .login-img {
+    height: 100%;
+    min-width: 0;
+    max-width: 100%;
+    display: block;
+    flex: 4;
+  }
+  .login-content {
+    padding: {
+      left: var(--spacing-lg);
+      right: var(--spacing-lg);
+    }
+    flex: 1;
+    max-width: 400px;
+    .login-title {
+      text-align: center;
+      color: var(--color-primary);
+      font-size: 32px;
+      @include font-black;
+      span {
+        @include font-black;
+        color: var(--color-secondary);
+      }
+    }
+    .login-form {
+      background-color: var(--color-background);
+      border-radius: var(--radius-md);
+      margin-top: var(--spacing-md);
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 0 10px 0 rgba(27, 45, 82, 0.1);
+      .login-form-item {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--gray-200);
+        display: flex;
+        &:nth-child(2) {
+          border-bottom: none;
+        }
+        span {
+          @include font-bold;
+          color: var(--gray-500);
+          width: 30px;
+          display: inline-block;
+          text-align: center;
+        }
+        input {
+          background-color: var(--color-background) !important;
+          margin-left: var(--spacing-md);
+          flex: 1;
+          outline: none;
+          border: 0;
+          cursor: pointer;
+          font-size: var(--font-size-base);
+          @include font-medium;
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 1000px white inset !important;
+            box-shadow: 0 0 0 1000px white inset !important;
+            -webkit-text-fill-color: #000 !important;
+            transition: background-color 5000s ease-in-out 0s;
+          }
+        }
+        &:focus-within {
+          span {
+            color: var(--color-primary);
+          }
+        }
+      }
+      .login-form-btn {
+        margin: var(--spacing-sm) var(--spacing-md)  var(--spacing-md);
+        width: calc(100% - var(--spacing-md) * 2);
+        height: 40px;
+        cursor: pointer;
+        @include font-bold;
+        color: var(--color-background);
+        &.loading {
+          &:disabled {
+            opacity: 0.5;
+          }
+        }
+        &:not(.loading):disabled {
+          background-color: var(--gray-200);
+          color: var(--gray-500);
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .login-img {
+    display: none !important;
+  }
+}

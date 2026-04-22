@@ -1,0 +1,47 @@
+@import "root";
+
+// 수정 시간
+.mdf-time {
+  color: var(--gray-500);
+  font-size: var(--font-size-medium);
+  text-align: right;
+}
+
+// 작업 시작 시간, 마감 기한
+.timeline-body {
+  gap: var(--spacing-md);
+  @include flex-justify-between;
+  flex-direction: row;
+  .timeline {
+    @include flex-justify-between;
+    align-items: center;
+    font-size: var(--font-size-medium);
+    .timeline-title {
+      color: var(--gray-700);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background-color: var(--gray-150);
+      @include flex-align-center;
+      border-radius: var(--radius-md);
+      display: inline-block;
+    }
+    .time {
+      margin-left: var(--spacing-sm);
+    }
+  }
+}
+
+// 정보
+.info-header {
+  @include flex-justify-between;
+  > .title {
+    @include font-bold;
+    font-size: var(--font-size-base);
+  }
+}
+.cell-header {
+  color: var(--gray-600);
+  width: 140px;
+  > span {
+    @include font-bold;
+  }
+}

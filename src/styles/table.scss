@@ -1,0 +1,273 @@
+@import "root";
+
+// Table
+.table-container {
+  flex: 1;
+  @include flex-column;
+  > div:has(table) {
+    flex: 1;
+    > div {
+      flex: auto;
+      height: 100px; // 임시 높이
+      td {
+        border-radius: var(--heroui-radius-large);
+      }
+    }
+  }
+  > div:has(nav) {
+    margin-top: var(--spacing-md);
+    flex: 0;
+  }
+  &.single {
+    flex: initial;
+  }
+  th:has(label[aria-label="Select All"]) {
+    width: 40px;
+  }
+  // resize
+  table {
+    table-layout: fixed !important;
+    th[data-slot="column-header"] {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+    }
+    .table-header {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    th[data-slot="sort-icon"] {
+      flex-shrink: 0;
+      margin-left: 2px;
+    }
+    tr[role="row"] {
+      .table-header {
+        &:has(+ .resize-none) {
+          position: inherit;
+          padding-right: 0;
+        }
+      }
+      &:hover {
+        .table-header {
+          //position: inherit;
+          //position: static;
+        }
+        .resize-handle,
+        .resize-none {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 2px;
+          width: 2px;
+          height: 60%;
+          z-index: 10;
+        }
+        .resize-handle {
+          background-color: var(--gray-400);
+          cursor: e-resize;
+          &:hover {
+            width: 4px;
+            background-color: var(--gray-500);
+            cursor: e-resize;
+          }
+        }
+        .resize-none {
+          background-color: var(--gray-200);
+          &:hover {
+            cursor: no-drop;
+          }
+        }
+      }
+    }
+    td > .cell-text > div > div > h2 > button {
+      padding: {
+        top: 0;
+        bottom: 0;
+      }
+    }
+    .chip-cell-wrapper {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      .chip-ellipsis {
+        flex-shrink: 1;
+        max-width: 100%;
+        &[data-slot="content"] {
+          max-width: 100%;
+          min-width: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  [role="columnheader"] {
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+  [role="gridcell"] > span {
+    display: block !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+  // 디바이스 목록 (DeviceByMachine.tsx)
+  .device-count {
+    background-color: var(--color-input);
+    @include flex-center;
+    min-width: 20px;
+    padding: {
+      left: var(--spacing-xs);
+      right: var(--spacing-xs);
+    }
+    border-radius: var(--radius-sm);
+  }
+  .device-info {
+    .copy {
+      margin-left: var(--spacing-xs);
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+    }
+  }
+
+  // ============ resize
+  .no-rows {
+    @include flex-center;
+    color: var(--gray-500);
+    height: 100%;
+    font-size: var(--font-size-heading);
+    span {
+      margin-left: var(--spacing-xs);
+    }
+  }
+  .filter-header {
+    @include flex-align-start;
+    .filter-icon {
+      color: var(--gray-500);
+      margin-left: var(--spacing-xs);
+      font-size: 12px;
+    }
+  }
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--color-blue);
+  }
+  .new-tab {
+    color: var(--color-primary);
+    margin-left: var(--spacing-xs);
+  }
+
+  // badge
+  .true-icon {
+    color: var(--color-green);
+  }
+  .false-icon {
+    color: var(--color-red);
+  }
+  // user-status
+  .MuiDataGrid-cell:has(.status-badge) {
+    @include flex-align-center;
+  }
+  .status-badge {
+    @include flex-center;
+    background-color: var(--gray-150);
+    border-radius: var(--radius-md);
+    @include flex-center;
+    width: auto;
+    height: 26px;
+    padding: 0 var(--spacing-sm);
+    &:has(.active, .inactive, .expired, .locked) {
+      border: 1px solid var(--gray-200);
+    }
+    svg {
+      color: var(--gray-700);
+    }
+    p {
+      margin-left: var(--spacing-xs);
+      font-size: var(--font-size-small);
+      @include font-bold;
+    }
+    &.start {
+      background-color: #E6F4EA;
+      color: #1E7D34;
+      svg {
+        color: #1E7D34;
+      }
+    }
+    &.stop {
+      background-color: #FDECEA;
+      color: #B71C1C;
+      svg {
+        color: #B71C1C;
+      }
+    }
+    &.restore {
+      background-color: #ECEFF1;
+      color: #546E7A;
+      svg {
+        color: #546E7A;
+      }
+    }
+    &.none {
+      background-color: transparent;
+      svg {
+        color: var(--gray-400);
+      }
+    }
+    // user-status
+    .active {
+      color: #1E7D34;
+    }
+    .inactive {
+      color: #B71C1C;
+    }
+    .expired {
+      color: #F57C00;
+    }
+    .locked {
+      color: #546E7A;
+    }
+  }
+  .status-icon {
+    font-size: var(--font-size-sm);
+    color: var(--gray-300);
+    svg {
+      margin-right: var(--spacing-xs);
+    }
+    &.restore {
+      color: #616161;
+    }
+    &.start {
+      color: #367ccd;
+    }
+    &.stop {
+      color: #dc4a4a;
+    }
+    .status-text {
+      @include font-bold;
+    }
+  }
+  // status-chip
+  .status-chip {
+    min-width: max-content !important;
+  }
+}
+
+// detail
+.cell-detail {
+  color: var(--gray-600);
+  min-width: 26px;
+  max-height: 26px;
+  padding: 0;
+}

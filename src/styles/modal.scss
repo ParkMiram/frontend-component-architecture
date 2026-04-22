@@ -1,0 +1,84 @@
+@import 'root';
+
+// form
+.modal-form {
+  @include flex-baseline;
+  flex-direction: column;
+  li {
+    margin-bottom: var(--spacing-md);
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .confirm-question {
+    text-align: left;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    @include flex-center;
+    svg {
+      margin-right: var(--spacing-xs);
+      color: var(--color-yellow);
+    }
+    .id {
+      margin-left: var(--spacing-xs);
+    }
+    .status-badge {
+      @include flex-center;
+      background-color: var(--gray-150);
+      border-radius: var(--radius-md);
+      @include flex-center;
+      width: auto;
+      height: 26px;
+      padding: 0 var(--spacing-sm);
+      margin: 0 var(--spacing-sm);
+
+      svg {
+        color: var(--gray-700);
+      }
+
+      p {
+        font-size: var(--font-size-medium);
+        @include font-bold;
+      }
+      // user-status
+      .active {
+        color: #1E7D34;
+      }
+      .inactive {
+        color: #B71C1C;
+      }
+      .expired {
+        color: #F57C00;
+      }
+      .locked {
+        color: #546E7A;
+      }
+    }
+  }
+  .modal-sub-title {
+    margin-bottom: var(--spacing-md);
+    @include flex-align-center;
+    font-size: var(--font-size-medium);
+    color: var(--gray-700);
+    .id {
+      margin-right: var(--spacing-xs);
+    }
+  }
+  .id {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    background-color: var(--gray-200);
+    font-size: var(--font-size-medium);
+    color: var(--gray-900);
+  }
+}
+
+// error
+.error-code {
+  font-size: var(--font-size-small);
+  color: var(--gray-600);
+  span {
+    text-decoration: underline;
+  }
+}

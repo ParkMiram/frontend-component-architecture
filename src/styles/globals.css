@@ -1,0 +1,44 @@
+@import "tailwindcss";
+/* @config "../../tailwind.config.js" */
+@plugin "../hero.js";
+/* 소스 스캔 경로: 앱 코드 + HeroUI 테마 */
+@source "../**/*.{js,ts,jsx,tsx}";
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@font-face {
+  font-family: "Pretendard Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Pretendard-Regular.woff") format("woff");
+}
+
+@layer utilities {
+  @keyframes slide-down {
+    from { transform: translateY(-16px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(-16px); opacity: 0; }
+  }
+
+  .animate-slide-down { animation: slide-down 220ms ease-out; }
+  .animate-slide-up { animation: slide-up 180ms ease-in; }
+}
+
+div[data-overlay-container=true] { height: 100vh; }
+
+* {
+  font-family: "Pretendard Regular", sans-serif !important;
+}
+
+button { cursor: pointer; }
+span[role=button] { cursor: pointer !important; }
+
+body > div[data-overlay-container="true"] {
+  height: 0 !important;
+}
+
+li {
+  list-style: none;
+}

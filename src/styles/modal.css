@@ -1,0 +1,203 @@
+:root {
+  --color-primary: #0056FF;
+  --color-secondary: #1b2d52;
+  --color-body: #f0f4f8;
+  --color-text: #333;
+  --color-blue: #2196f3;
+  --color-green: #1ca884;
+  --color-red: #f44336;
+  --color-yellow: #FFA500;
+  --color-background: #ffffff;
+  --color-input: #eef1f5;
+  --gray-100: #f8f9fa;
+  --gray-150: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-heading: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --heroui-radius-small: 4px;
+  --heroui-radius-medium: 8px;
+  --heroui-radius-large: 10px;
+}
+@font-face {
+  font-family: "Pretendard Thin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/Pretendard-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Black";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/Pretendard-Black.woff") format("woff");
+}
+:root {
+  --font-black: "Pretendard Black" !important;
+  --font-extra-bold: "Pretendard ExtraBold" !important;
+  --font-bold: "Pretendard Bold" !important;
+  --font-medium: "Pretendard Medium" !important;
+  --font-regular: "Pretendard Regular" !important;
+  --font-light: "Pretendard Light" !important;
+  --font-extra-light: "Pretendard ExtraLight" !important;
+  --font-thin: "Pretendard Thin" !important;
+}
+
+[data-theme=dark] {
+  --color-primary: #9bb4ff;
+  --color-secondary: #0056FF;
+  --color-body: #121212;
+  --color-text: #e0e0e0;
+  --color-blue: #64b5f6;
+  --color-green: #66d9b3;
+  --color-red: #ef5350;
+  --color-background: #1e2a36;
+  --gray-100: #2a2a2a;
+  --gray-200: #333;
+  --gray-300: #3d3d3d;
+  --gray-400: #555;
+  --gray-500: #777;
+  --gray-600: #999;
+  --gray-700: #bbb;
+  --gray-800: #ddd;
+  --gray-900: #f1f1f1;
+}
+
+.modal-form {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+.modal-form li {
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+}
+.modal-form li:last-child {
+  margin-bottom: 0;
+}
+.modal-form .confirm-question {
+  text-align: left;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-form .confirm-question svg {
+  margin-right: var(--spacing-xs);
+  color: var(--color-yellow);
+}
+.modal-form .confirm-question .id {
+  margin-left: var(--spacing-xs);
+}
+.modal-form .confirm-question .status-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-150);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 26px;
+  padding: 0 var(--spacing-sm);
+  margin: 0 var(--spacing-sm);
+}
+.modal-form .confirm-question .status-badge svg {
+  color: var(--gray-700);
+}
+.modal-form .confirm-question .status-badge p {
+  font-size: var(--font-size-medium);
+  font-family: var(--font-bold), sans-serif !important;
+}
+.modal-form .confirm-question .status-badge .active {
+  color: #1E7D34;
+}
+.modal-form .confirm-question .status-badge .inactive {
+  color: #B71C1C;
+}
+.modal-form .confirm-question .status-badge .expired {
+  color: #F57C00;
+}
+.modal-form .confirm-question .status-badge .locked {
+  color: #546E7A;
+}
+.modal-form .modal-sub-title {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-medium);
+  color: var(--gray-700);
+}
+.modal-form .modal-sub-title .id {
+  margin-right: var(--spacing-xs);
+}
+.modal-form .id {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  background-color: var(--gray-200);
+  font-size: var(--font-size-medium);
+  color: var(--gray-900);
+}
+
+.error-code {
+  font-size: var(--font-size-small);
+  color: var(--gray-600);
+}
+.error-code span {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=modal.css.map */

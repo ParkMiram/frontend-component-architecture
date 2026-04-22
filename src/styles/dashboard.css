@@ -1,0 +1,208 @@
+:root {
+  --color-primary: #0056FF;
+  --color-secondary: #1b2d52;
+  --color-body: #f0f4f8;
+  --color-text: #333;
+  --color-blue: #2196f3;
+  --color-green: #1ca884;
+  --color-red: #f44336;
+  --color-yellow: #FFA500;
+  --color-background: #ffffff;
+  --color-input: #eef1f5;
+  --gray-100: #f8f9fa;
+  --gray-150: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-heading: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --heroui-radius-small: 4px;
+  --heroui-radius-medium: 8px;
+  --heroui-radius-large: 10px;
+}
+@font-face {
+  font-family: "Pretendard Thin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/Pretendard-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Black";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/Pretendard-Black.woff") format("woff");
+}
+:root {
+  --font-black: "Pretendard Black" !important;
+  --font-extra-bold: "Pretendard ExtraBold" !important;
+  --font-bold: "Pretendard Bold" !important;
+  --font-medium: "Pretendard Medium" !important;
+  --font-regular: "Pretendard Regular" !important;
+  --font-light: "Pretendard Light" !important;
+  --font-extra-light: "Pretendard ExtraLight" !important;
+  --font-thin: "Pretendard Thin" !important;
+}
+
+[data-theme=dark] {
+  --color-primary: #9bb4ff;
+  --color-secondary: #0056FF;
+  --color-body: #121212;
+  --color-text: #e0e0e0;
+  --color-blue: #64b5f6;
+  --color-green: #66d9b3;
+  --color-red: #ef5350;
+  --color-background: #1e2a36;
+  --gray-100: #2a2a2a;
+  --gray-200: #333;
+  --gray-300: #3d3d3d;
+  --gray-400: #555;
+  --gray-500: #777;
+  --gray-600: #999;
+  --gray-700: #bbb;
+  --gray-800: #ddd;
+  --gray-900: #f1f1f1;
+}
+
+.dashboard-title {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-title .title {
+  font-family: var(--font-bold), sans-serif !important;
+  font-size: var(--font-size-heading);
+}
+.dashboard-title .refresh-time .time {
+  font-size: var(--font-size-medium);
+  color: var(--gray-600);
+  margin-right: var(--spacing-md);
+}
+.dashboard-title .refresh-time .refresh-text {
+  font-family: var(--font-bold), sans-serif !important;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+.card-header .title {
+  font-family: var(--font-bold), sans-serif !important;
+  font-size: var(--font-size-heading);
+  margin-left: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+}
+
+.card-body:has(div[aria-label=Loading]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.today {
+  font-family: var(--font-light), sans-serif !important;
+  color: #FFF;
+}
+
+.today-rate-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row;
+}
+.today-rate-body:has(div[aria-label=Loading]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.today-rate-body .today-rate {
+  font-family: var(--font-bold), sans-serif !important;
+}
+.today-rate-body .today-count {
+  margin-left: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+}
+.today-rate-body .today-count .today-count-info {
+  font-size: var(--font-size-small);
+  color: var(--gray-600);
+}
+.today-rate-body .today-count .today-count-value {
+  color: var(--gray-500);
+  text-align: right;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+.cell p {
+  font-size: var(--font-size-medium);
+}
+.cell .cell-header {
+  font-family: var(--font-bold), sans-serif !important;
+  color: var(--gray-700);
+  display: flex;
+  align-items: center;
+}
+.cell .cell-header::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--gray-400);
+  margin-right: var(--spacing-sm);
+}
+
+/*# sourceMappingURL=dashboard.css.map */

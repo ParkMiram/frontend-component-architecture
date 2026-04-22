@@ -1,0 +1,215 @@
+:root {
+  --color-primary: #0056FF;
+  --color-secondary: #1b2d52;
+  --color-body: #f0f4f8;
+  --color-text: #333;
+  --color-blue: #2196f3;
+  --color-green: #1ca884;
+  --color-red: #f44336;
+  --color-yellow: #FFA500;
+  --color-background: #ffffff;
+  --color-input: #eef1f5;
+  --gray-100: #f8f9fa;
+  --gray-150: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-heading: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --heroui-radius-small: 4px;
+  --heroui-radius-medium: 8px;
+  --heroui-radius-large: 10px;
+}
+@font-face {
+  font-family: "Pretendard Thin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/Pretendard-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Black";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/Pretendard-Black.woff") format("woff");
+}
+:root {
+  --font-black: "Pretendard Black" !important;
+  --font-extra-bold: "Pretendard ExtraBold" !important;
+  --font-bold: "Pretendard Bold" !important;
+  --font-medium: "Pretendard Medium" !important;
+  --font-regular: "Pretendard Regular" !important;
+  --font-light: "Pretendard Light" !important;
+  --font-extra-light: "Pretendard ExtraLight" !important;
+  --font-thin: "Pretendard Thin" !important;
+}
+
+[data-theme=dark] {
+  --color-primary: #9bb4ff;
+  --color-secondary: #0056FF;
+  --color-body: #121212;
+  --color-text: #e0e0e0;
+  --color-blue: #64b5f6;
+  --color-green: #66d9b3;
+  --color-red: #ef5350;
+  --color-background: #1e2a36;
+  --gray-100: #2a2a2a;
+  --gray-200: #333;
+  --gray-300: #3d3d3d;
+  --gray-400: #555;
+  --gray-500: #777;
+  --gray-600: #999;
+  --gray-700: #bbb;
+  --gray-800: #ddd;
+  --gray-900: #f1f1f1;
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-body);
+  background-size: cover;
+  min-height: 500px;
+  overflow-y: auto;
+}
+.login-container .login-img {
+  height: 100%;
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  flex: 4;
+}
+.login-container .login-content {
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  flex: 1;
+  max-width: 400px;
+}
+.login-container .login-content .login-title {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 32px;
+  font-family: var(--font-black), sans-serif !important;
+}
+.login-container .login-content .login-title span {
+  font-family: var(--font-black), sans-serif !important;
+  color: var(--color-secondary);
+}
+.login-container .login-content .login-form {
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 0 10px 0 rgba(27, 45, 82, 0.1);
+}
+.login-container .login-content .login-form .login-form-item {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+}
+.login-container .login-content .login-form .login-form-item:nth-child(2) {
+  border-bottom: none;
+}
+.login-container .login-content .login-form .login-form-item span {
+  font-family: var(--font-bold), sans-serif !important;
+  color: var(--gray-500);
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.login-container .login-content .login-form .login-form-item input {
+  background-color: var(--color-background) !important;
+  margin-left: var(--spacing-md);
+  flex: 1;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-medium), sans-serif !important;
+}
+.login-container .login-content .login-form .login-form-item input:-webkit-autofill, .login-container .login-content .login-form .login-form-item input:-webkit-autofill:hover, .login-container .login-content .login-form .login-form-item input:-webkit-autofill:focus, .login-container .login-content .login-form .login-form-item input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.login-container .login-content .login-form .login-form-item:focus-within span {
+  color: var(--color-primary);
+}
+.login-container .login-content .login-form .login-form-btn {
+  margin: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  width: calc(100% - var(--spacing-md) * 2);
+  height: 40px;
+  cursor: pointer;
+  font-family: var(--font-bold), sans-serif !important;
+  color: var(--color-background);
+}
+.login-container .login-content .login-form .login-form-btn.loading:disabled {
+  opacity: 0.5;
+}
+.login-container .login-content .login-form .login-form-btn:not(.loading):disabled {
+  background-color: var(--gray-200);
+  color: var(--gray-500);
+  cursor: default;
+}
+
+@media (max-width: 1024px) {
+  .login-img {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

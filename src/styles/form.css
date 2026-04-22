@@ -1,0 +1,267 @@
+:root {
+  --color-primary: #0056FF;
+  --color-secondary: #1b2d52;
+  --color-body: #f0f4f8;
+  --color-text: #333;
+  --color-blue: #2196f3;
+  --color-green: #1ca884;
+  --color-red: #f44336;
+  --color-yellow: #FFA500;
+  --color-background: #ffffff;
+  --color-input: #eef1f5;
+  --gray-100: #f8f9fa;
+  --gray-150: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-heading: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --heroui-radius-small: 4px;
+  --heroui-radius-medium: 8px;
+  --heroui-radius-large: 10px;
+}
+@font-face {
+  font-family: "Pretendard Thin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/Pretendard-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Pretendard-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard ExtraBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard Black";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/Pretendard-Black.woff") format("woff");
+}
+:root {
+  --font-black: "Pretendard Black" !important;
+  --font-extra-bold: "Pretendard ExtraBold" !important;
+  --font-bold: "Pretendard Bold" !important;
+  --font-medium: "Pretendard Medium" !important;
+  --font-regular: "Pretendard Regular" !important;
+  --font-light: "Pretendard Light" !important;
+  --font-extra-light: "Pretendard ExtraLight" !important;
+  --font-thin: "Pretendard Thin" !important;
+}
+
+[data-theme=dark] {
+  --color-primary: #9bb4ff;
+  --color-secondary: #0056FF;
+  --color-body: #121212;
+  --color-text: #e0e0e0;
+  --color-blue: #64b5f6;
+  --color-green: #66d9b3;
+  --color-red: #ef5350;
+  --color-background: #1e2a36;
+  --gray-100: #2a2a2a;
+  --gray-200: #333;
+  --gray-300: #3d3d3d;
+  --gray-400: #555;
+  --gray-500: #777;
+  --gray-600: #999;
+  --gray-700: #bbb;
+  --gray-800: #ddd;
+  --gray-900: #f1f1f1;
+}
+
+.form-component-container {
+  display: flex;
+  align-items: baseline;
+}
+.form-component-container label[data-slot=label] {
+  color: black;
+}
+.form-component-container .form-label {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-sm);
+  min-width: 100px;
+}
+.form-component-container .form-label label {
+  font-size: var(--font-size-medium);
+}
+.form-component-container .form-label .required {
+  color: var(--color-red);
+}
+.form-component-container .form-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form-component-container .form-content .form {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+}
+.form-component-container .form-content .form:has(div[data-invalid=true]) {
+  display: flex;
+  align-items: center;
+}
+.form-component-container .form-content .form > div[data-invalid=true] + button {
+  margin-top: 4px;
+}
+.form-component-container .form-content .message {
+  color: var(--color-red);
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-xs);
+}
+
+.notes-box {
+  padding: var(--spacing-xs);
+  font-size: var(--font-size-small);
+}
+.notes-box .notes-sub-title {
+  font-family: var(--font-bold), sans-serif !important;
+  margin-bottom: var(--spacing-xs);
+}
+.notes-box .notes {
+  margin-bottom: var(--spacing-xs);
+}
+.notes-box .notes > p {
+  display: flex;
+  align-items: center;
+}
+.notes-box .notes > p .number {
+  background-color: var(--color-blue);
+  min-width: 16px;
+  min-height: 16px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--spacing-xs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--spacing-xs);
+}
+.notes-box .notes > p .number svg {
+  color: var(--color-background);
+  font-size: 8px;
+  margin-right: 0;
+}
+
+.date-picker-container {
+  display: flex;
+}
+.date-picker-container p {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-sm);
+  min-width: 100px;
+  font-size: var(--font-size-medium);
+}
+.date-picker-container .date-picker {
+  display: flex;
+  flex: 1;
+}
+.date-picker-container .date-picker .date {
+  flex: 1;
+  height: 40px;
+  font-size: var(--font-size-medium);
+  background-color: var(--color-input) !important;
+  border-radius: var(--radius-md);
+}
+.date-picker-container .date-picker .date:first-child {
+  margin-right: var(--spacing-sm);
+}
+.date-picker-container .date-picker .date > label[data-shrink=false] {
+  top: 50%;
+  left: 12px;
+  transform: translate(0, -50%);
+  line-height: initial;
+  font-size: var(--font-size-medium);
+}
+.date-picker-container .date-picker .date > label[data-shrink=true] {
+  display: none;
+}
+.date-picker-container .date-picker .date > div[role=group] {
+  height: 100%;
+  line-height: initial;
+  font-size: var(--font-size-medium);
+}
+.date-picker-container .date-picker .date > div[role=group] > div {
+  padding: 0;
+  line-height: initial;
+  width: auto;
+}
+.date-picker-container .date-picker .date > div[role=group] > fieldset {
+  border-width: 0 !important;
+}
+
+.uploadedFile {
+  font-size: var(--font-size-small);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+.uploadedFile:first-child {
+  margin-top: 0;
+}
+.uploadedFile .uploadedFileName {
+  margin-left: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+  flex: 1;
+}
+.uploadedFile .removeUploadedFile {
+  min-width: auto;
+  height: auto;
+  padding: 0;
+  background-color: transparent;
+  color: var(--gray-600);
+  font-size: var(--font-size-small);
+}
+
+/*# sourceMappingURL=form.css.map */

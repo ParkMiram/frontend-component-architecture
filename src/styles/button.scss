@@ -1,0 +1,99 @@
+@import "root";
+
+// PageButtonBox & PageButton
+.page-button-box {
+  @include flex-center;
+  button {
+    margin-right: var(--spacing-sm);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .page-button {
+    @include flex-center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--gray-800);
+    @include font-bold;
+    height: 36px;
+    min-width: 80px;
+    margin-right: var(--spacing-sm);
+    background-color: var(--gray-200);
+    font-size: 13px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: var(--gray-300);
+    }
+    &.add {
+      background-color: var(--color-primary) !important;
+      color: #FFF !important;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+    // select (사용자 정보 > 상태 변경)
+    &.status {
+      color: var(--gray-800);
+      background-color: var(--gray-200);
+      &.Mui-disabled {
+        opacity: 0.5;
+      }
+      > div[role="combobox"] {
+        @include font-bold;
+        padding: {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: var(--spacing-md);
+        }
+        -webkit-text-fill-color: initial;
+      }
+    }
+  }
+}
+
+// TabButton
+.tab-container {
+  .tab-button {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    font-size: var(--font-size-medium);
+    color: var(--gray-700);
+    margin-right: var(--spacing-sm);
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: rgba(27, 45, 82, 0.1);
+    }
+    &.selected {
+      background-color: var(--color-primary);
+      color: var(--color-background);
+      box-shadow: 0 0 8px 0 rgba(27, 45, 82, 0.2);
+    }
+  }
+}
+
+// ModalButton
+.modal-button {
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  &.confirm {
+    background-color: var(--color-primary);
+    color: #FFF;
+  }
+  &.close {
+    margin-right: var(--spacing-sm);
+    color: var(--gray-700);
+    background-color: transparent;
+    @include transition;
+    &:hover {
+      @include transition;
+      background-color: var(--gray-200);
+    }
+  }
+  &.expired {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: var(--color-blue);
+    width: 80px;
+    @include flex-center;
+  }
+}

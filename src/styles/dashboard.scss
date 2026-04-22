@@ -1,0 +1,89 @@
+@import "root";
+
+.dashboard-title {
+  @include flex-justify-between;
+  .title {
+    @include font-bold;
+    font-size: var(--font-size-heading);
+  }
+  .refresh-time {
+    .time {
+      font-size: var(--font-size-medium);
+      color: var(--gray-600);
+      margin-right: var(--spacing-md);
+    }
+    .refresh-text {
+      @include font-bold;
+    }
+  }
+}
+
+// 공통
+.card-header {
+  @include flex-align-center;
+  .title {
+    @include font-bold;
+    font-size: var(--font-size-heading);
+    margin: {
+      left: var(--spacing-sm);
+      right: var(--spacing-sm);
+    }
+  }
+}
+.card-body {
+  &:has(div[aria-label="Loading"]) {
+    @include flex-center;
+  }
+}
+
+// 오늘의 수율
+.today {
+  @include font-light;
+  color: #FFF;
+}
+.today-rate-body {
+  @include flex-justify-between;
+  align-items: flex-end;
+  flex-direction: row;
+  &:has(div[aria-label="Loading"]) {
+    @include flex-center;
+  }
+  .today-rate {
+    @include font-bold;
+  }
+  .today-count {
+    margin-left: var(--spacing-sm);
+    @include flex-column;
+    .today-count-info {
+      font-size: var(--font-size-small);
+      color: var(--gray-600);
+    }
+    .today-count-value {
+      color: var(--gray-500);
+      text-align: right;
+    }
+  }
+}
+
+// 정보
+.cell {
+  @include flex-align-center;
+  margin-bottom: var(--spacing-xs);
+  p {
+    font-size: var(--font-size-medium);
+  }
+  .cell-header {
+    @include font-bold;
+    color: var(--gray-700);
+    @include flex-align-center;
+    &::before {
+      content: '';
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: var(--gray-400);
+      margin-right: var(--spacing-sm);
+    }
+  }
+}
